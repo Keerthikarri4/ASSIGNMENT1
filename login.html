@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/style.css">
+    <title>1stop-website|login</title>
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <nav class="nav_top">
+       <div class="logo">
+           <a href="index.html"></a><img src="images/2pic.png" width="150"></a>
+      </div>
+      <div class="nav_side">
+          <a href="about.html">About Us</a>
+          <a href="service.html">Service</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Login/Register</a>
+     </div>
+         </nav> 
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="Login()" >Log In</button>
+                <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+
+            </div>
+            
+        <div class="social-icons">
+            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-linkedin"aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-google" aria-hidden="true"></i></a>
+        </div>
+            <form  id="Login" class="form" name="login-googlesheet" method="post">
+        
+            <input type="text" class="l_form" name="user Id" placeholder="user Id" required><br>
+            <input type="text" class="l_form" name="Enter password" placeholder="Enter Password" required><br>
+            <input type="checkbox" class="check-box"><span>Remember Password</span><br>
+            <button type="submit" class="submit-btn">Log In</button>
+        </form>
+
+                <form  id="Register" class="form" name="register-googlesheet" method="post">
+                <input type="text" class="l_form" placeholder="user Id" required><br>
+                <input type="email" class="l_form" placeholder="email Id" required><br>
+                <input type="text" class="l_form" placeholder="Enter Password" required><br>
+                <input type="checkbox" class="check-box"><span>I Agree to the terms and conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+    </form>
+    </div>
+    </div>
+    <script>
+        var x = document .getElementById("Login");
+        var y = document .getElementById("Register");
+        var z = document .getElementById("btn");
+
+        function  Register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function  Login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+    </script>
+    
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+         <!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzjlR9OlcH_Jvf7tm_t_hEQhkU0K1YTcs38o0PNI6syVkeSNwm5Si7Azu15NBfaZ2I/exec"
+            const form = document.forms['login-googlesheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thank you"))
+                .catch(error => console.error('Error!', error.message))
+            })
+</script>
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+         <!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+     const scriptURL =  "https://script.google.com/macros/s/AKfycbxbGvJNsnevArVvst8pJ5wBAF07uOvyFijkCdgvfg9f-RRMFteQ3V5Pyl8J-sNsm9q8/exec"
+             const form = document.forms['Register-googlesheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thank you"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          
+</script>
+
+    </body>
+</html>
